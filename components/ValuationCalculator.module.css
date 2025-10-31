@@ -1,0 +1,229 @@
+/* --- Base Card & Layout --- */
+.card {
+  background-color: #1f2937;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  border: 1px solid #374151;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 24px;
+}
+@media (min-width: 640px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.card h2 {
+  margin: 0 0 4px 0;
+  color: #F59E0B; /* Gold Accent */
+}
+
+.card p {
+  color: #9ca3af;
+  margin: 0;
+  font-size: 14px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.inputColumn, .outputColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* --- View Toggle --- */
+.viewToggle {
+  display: flex;
+  align-items: center;
+}
+.toggleButton {
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #4b5563;
+  background-color: #374151;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.toggleButton:first-of-type {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.toggleButton:last-of-type {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-left: none;
+}
+.toggleButtonActive {
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #F59E0B;
+  background-color: #F59E0B;
+  color: #111827;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+/* --- Fieldsets & Inputs --- */
+.fieldset {
+  border: 1px solid #374151;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+}
+.legend {
+  padding: 0 8px;
+  font-weight: 600;
+  color: #d1d5db;
+  font-size: 16px;
+}
+.subGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 640px) {
+    .subGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.subFieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.subLegend {
+  color: #9ca3af;
+  font-weight: 500;
+  font-size: 14px;
+  border-bottom: 1px solid #374151;
+  padding-bottom: 8px;
+}
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+.inputGroup label {
+  color: #9ca3af;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.inputGroup input,
+.inputGroup select {
+  width: 100%;
+  background-color: #374151;
+  color: #f9fafb;
+  border: 1px solid #4b5563;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 14px;
+  box-sizing: border-box; /* Important for consistency */
+}
+.inputGroup input:focus,
+.inputGroup select:focus {
+  outline: none;
+  border-color: #F59E0B;
+}
+
+/* --- Stress Test --- */
+.stressTestGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #111827;
+  padding: 12px 16px;
+  border-radius: 8px;
+}
+.stressTestGroup label {
+  color: #e5e7eb;
+  font-weight: 500;
+  flex-grow: 1;
+}
+.stressInput {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #374151;
+  border: 1px solid #4b5563;
+  border-radius: 6px;
+}
+.stressInput input {
+  width: 50px;
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 8px;
+  text-align: right;
+  font-size: 14px;
+}
+.stressInput input:focus {
+  outline: none;
+}
+.stressInput span {
+  color: #9ca3af;
+  font-size: 14px;
+  padding-right: 8px;
+}
+.toggleSwitch { /* Simple checkbox for now, can be styled further */
+  height: 20px;
+  width: 20px;
+}
+
+/* --- Outputs --- */
+.outputGroup {
+  background-color: #111827; /* Darker than card */
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #374151;
+}
+.outputGroup label {
+  color: #9ca3af;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 4px;
+}
+.outputValue {
+  color: #f9fafb;
+  font-size: 24px;
+  font-weight: 600;
+}
+.dscrGood {
+  color: #34D399; /* Green */
+}
+.dscrWarning {
+  color: #F87171; /* Red */
+  font-weight: 700;
+}
+
+/* --- Validation Errors --- */
+.inputError {
+  border-color: #F87171 !important; /* Red border for invalid */
+}
+.errorMessage {
+  color: #F87171;
+  font-size: 12px;
+  margin-top: 4px;
+}
